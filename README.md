@@ -41,3 +41,6 @@ nyah:say("Nyan nyan nyan~")
 ### Licence
 
 MIT/X11.
+
+
+[Boo]: http://github.com/killdream/Boo
