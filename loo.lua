@@ -36,13 +36,13 @@
 --
 -- :: a:Table, Table... -> a
 local function extend(target, ...)
-   local sources = table.pack(...)
-   for _, source in ipairs(sources) do
-      for k, v in pairs(source) do
-         target[k] = v
-      end
-   end
-   return target
+  local sources = {...}
+  for _, source in ipairs(sources) do
+    for k, v in pairs(source) do
+      target[k] = v
+    end
+  end
+  return target
 end
 
 
@@ -55,7 +55,7 @@ end
 --
 -- :: Table... -> Table
 local function merge(...)
-   return extend({}, ...)
+  return extend({}, ...)
 end
 
 
@@ -65,11 +65,11 @@ end
 --
 -- :: a:Table, Table... -> a <| b
 local function derive(proto, ...)
-   local meta   = setmetatable({}, proto)
-   local result = setmetatable({}, meta)
-   meta.__index = proto
-   extend(result, ...)
-   return result
+  local meta   = setmetatable({}, proto)
+  local result = setmetatable({}, meta)
+  meta.__index = proto
+  extend(result, ...)
+  return result
 end
 
 
@@ -79,9 +79,9 @@ end
 --
 -- :: a:Table, b... -> a <| c
 local function make(proto, ...)
-   local instance = derive(proto)
-   if instance._init then instance:_init(...) end
-   return instance
+  local instance = derive(proto)
+  if instance._init then instance:_init(...) end
+  return instance
 end
 
 
@@ -93,13 +93,13 @@ local Base = {}
 ----- λ make
 -- :: @self:Table => Table... -> self <| b
 function Base:make(...)
-   return make(self, ...)
+  return make(self, ...)
 end
 
 ----- λ derive
 -- :: @self:Table => Table... -> self <| a
 function Base:derive(...)
-   return derive(self, ...)
+  return derive(self, ...)
 end
 
 
