@@ -7,6 +7,9 @@ Loo
 Like [Boo][], but for Lua. Loo provides the basic prototypical primitives and
 combinators so you can structure your programs easily.
 
+[Boo]: http://github.com/killdream/Boo
+
+
 ```lua
 local loo = require("loo")
 
@@ -18,12 +21,15 @@ end
 
 local Cat = Animal:derive()
 
-function Cat:_init(name)
-  if name then self.name = name end
+function Cat:purr(name)
+  return "*" .. self.name .. " purrs*"
 end
 
-local nyah = Cat:make("Nyan Cat")
+local nyah = Cat:derive({ name = "Nyah" })
 nyah:say("Nyan nyan nyan~")
+// => Nyah: Nyan nyan nyan~
+nyah:purr()
+// => *Nyah purrs*
 ```
 
 ### Installing
@@ -53,4 +59,4 @@ $ busted
 MIT/X11.
 
 
-[Boo]: http://github.com/killdream/Boo
+

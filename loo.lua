@@ -73,28 +73,10 @@ local function derive(proto, ...)
 end
 
 
----- λ make
--- Constructs a new `Table` inheriting from the given meta-`Table`, and
--- calls the initialisation function on this new `Table`.
---
--- :: a:Table, b... -> a <| c
-local function make(proto, ...)
-  local instance = derive(proto)
-  if instance._init then instance:_init(...) end
-  return instance
-end
-
-
 --- -- Root object -----------------------------------------------------
 
 ---- {} Base
 local Base = {}
-
------ λ make
--- :: @self:Table => Table... -> self <| b
-function Base:make(...)
-  return make(self, ...)
-end
 
 ----- λ derive
 -- :: @self:Table => Table... -> self <| a
@@ -107,6 +89,5 @@ end
 return { extend = extend
        ; merge  = merge
        ; derive = derive
-       ; make   = make
        ; Base   = Base
        }

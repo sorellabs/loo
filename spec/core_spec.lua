@@ -58,30 +58,7 @@ describe("{} boo", function()
     end)
   end)
 
-  describe("make", function()
-    it("- Should clone the table", function()
-      local a = { a = 1 }
-      local b = loo.make(a)
-      assert.is_not.equal(a, b)
-      assert.equal(b.a, 1)
-    end)
-
-    it("- Should apply the `_init` method if present", function()
-      local a = { _init = function(self, n) self.a = n end }
-      local b = loo.make(a, 3)
-      assert.equal(b.a, 3)
-    end)
-  end)
-
   describe("{} Base", function()
-    describe("make", function()
-      it("- Should behave as `make`, but with auto-self", function()
-        local a = loo.Base:derive({ _init = function(self,n) self.a = n end })
-        local b = a:make(3)
-        assert.equal(b.a, 3)
-      end)
-    end)
-
     describe("derive", function()
       it("- Should behave as `derive`, but with auto-self", function()
         local a = loo.Base:derive({ a = 2 })
