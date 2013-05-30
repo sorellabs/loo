@@ -27,9 +27,9 @@ end
 
 local nyah = Cat:derive({ name = "Nyah" })
 nyah:say("Nyan nyan nyan~")
-// => Nyah: Nyan nyan nyan~
+-- => Nyah: Nyan nyan nyan~
 nyah:purr()
-// => *Nyah purrs*
+-- => *Nyah purrs*
 ```
 
 ### Installing
