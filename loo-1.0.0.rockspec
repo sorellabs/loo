@@ -1,8 +1,8 @@
 package = "Loo"
-version = "1.0-2"
+version = "1.0.0"
 source = {
   url = "http://github.com/killdream/loo.git",
-  tag = "v1.0-2"
+  tag = "v1.0.0"
 }
 description = {
   summary = "Primitives for dealing with prototypical inheritance using Lua metatables", 
