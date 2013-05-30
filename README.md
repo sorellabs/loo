@@ -10,6 +10,9 @@ combinators so you can structure your programs easily.
 [Boo]: http://github.com/killdream/Boo
 
 
+## Example
+
+
 ```lua
 local loo = require("loo")
 
@@ -32,12 +35,14 @@ nyah:purr()
 -- => *Nyah purrs*
 ```
 
-### Installing
+## Installing
 
-...
+    $ luarocks install loo
+    
+(Alternatively just download `loo.lua`)
 
 
-### Testing
+## Testing
 
 Install Busted, then run the specs:
 
@@ -49,12 +54,45 @@ $ busted
 (this assumes you have LuaRocks already installed on your system.)
 
 
-### Docs & Reference
+## Docs & Reference
 
-...
+### `extend(a, ...)`
+
+Extends the target `Table` with the provided mixins, using a right-most
+precedence rule.
+
+```hs
+extend: A:table, table... -> a
+```
+
+### `merge(...)`
+
+Creates a new `Table` that merges the provided mixins using a right-most
+precedence rule.
+
+```hs
+merge: table... -> table
+``` 
+
+### `derive(a, ...)`
+
+Creates a new `Table` inheriting from the given meta-`Table`, and extends it
+with the provided mixins.
+
+```hs
+derive: A:table, table... -> A <| B
+```
+
+### `Base:derive(...)`
+
+Like `derive()` but uses `self` as the meta-table to inherit from.
+
+```hs
+Base:derive: @self:table => table... -> self <| A
+```
 
 
-### Licence
+## Licence
 
 MIT/X11.
 
