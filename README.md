@@ -1,13 +1,14 @@
 Loo
 ===
 
-[![Build Status](https://travis-ci.org/killdream/loo.png)](https://travis-ci.org/killdream/loo)
+[![Build Status](https://travis-ci.org/robotlolita/loo.png)](https://travis-ci.org/robotlolita/loo)
+[![experimental](http://hughsk.github.io/stability-badges/dist/experimental.svg)](http://github.com/hughsk/stability-badges)
 
 
 Like [Boo][], but for Lua. Loo provides the basic prototypical primitives and
 combinators so you can structure your programs easily.
 
-[Boo]: http://github.com/killdream/Boo
+[Boo]: http://github.com/robotlolita/Boo
 
 
 ## Example
