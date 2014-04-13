@@ -2,7 +2,7 @@ Loo
 ===
 
 [![Build Status](https://travis-ci.org/robotlolita/loo.png)](https://travis-ci.org/robotlolita/loo)
-[![experimental](http://hughsk.github.io/stability-badges/dist/experimental.svg)](http://github.com/hughsk/stability-badges)
+[![stable](http://hughsk.github.io/stability-badges/dist/stable.svg)](http://github.com/hughsk/stability-badges)
 
 
 Like [Boo][], but for Lua. Loo provides the basic prototypical primitives and
